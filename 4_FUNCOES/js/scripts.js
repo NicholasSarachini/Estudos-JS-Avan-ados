@@ -158,3 +158,39 @@ const greeting = (name) => {
 greeting();
 
 greeting("Matheus");
+
+// 8 - valor default
+const customGreeting = (name, greet ="Olá") => {
+    return `${greet}, ${name}!`
+}
+
+console.log(customGreeting("Matheus"));
+
+console.log(customGreeting("João", "Bom dia"));
+
+const repeatText = (text, repeat = 2) => {
+
+    for (let i = 0; i < repeat; i++) {
+        console.log(text);
+    }
+
+}
+
+repeatText("Testando");
+
+repeatText("Agora repete 7 vezes p nós ai", 7);
+
+// 9 - closure
+
+function someFunction () {
+    let txt = "Alguma coisa";
+
+    function display() {
+    console.log(txt);
+    }
+
+    display();
+
+}
+
+someFunction();
