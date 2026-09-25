@@ -194,3 +194,60 @@ function someFunction () {
 }
 
 someFunction();
+
+// 10 - mais sobre closure
+const multiplicationClosure = (n) => {
+    return (m) => {
+        return n * m;
+    }
+}
+
+const c1 = multiplicationClosure(5);
+
+const c2 = multiplicationClosure(10);
+
+console.log(c1);
+console.log(c2);
+
+console.log(c1(5));
+// aqui vai dar 25, pois ja existe um valor reservado para c1 (linha 205), e agora esse novo valor é 
+// entregue ao m, dentro da função.
+console.log(c2(10));
+// mesma explicação de cima.
+
+// 11 - recursão/recursion
+const untilTen = (n, m) => {
+    if(n < 10) {
+        console.log("A função parou de executar!")
+    } else {
+        const x = n - m;
+
+        console.log(x);
+
+        untilTen(x, m);
+    }
+}
+
+untilTen(100, 7);
+
+// // infinite recursion
+// function run() => {
+//     console.log("Executando...");
+//     run();
+// }
+
+// run();
+
+function factorial(x) {
+    if (x === 0) {
+        return 1;
+    } else {
+        return x * factorial(x - 1);
+    }
+}
+
+const num = 6;
+
+const result = factorial(num);
+
+console.log(`O fatorial de ${num} é ${result}`)
